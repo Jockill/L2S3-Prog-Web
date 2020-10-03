@@ -1,26 +1,6 @@
-body::-webkit-scrollbar{width: 0.25rem;}
-body::-webkit-scrollbar-track{background: #000000;}
-body::-webkit-scrollbar-thumb{background: #20C20E;}
-body::-webkit-scrollbar-color{background: yellow;}
-
-/* html
-{
-    scrollbar-color: yellow;
-    scrollbar-width: 0.25rem;
-} CA MARCHE PAS ISSOU */
-
-body
-{
-    padding: 0;
-    margin: 0;
-}
-
-main
-{
-    margin-left: 5rem;
-    padding: 1rem;
-    min-height: 100vh;
-}
+/****************/
+/*****HEADER*****/
+/****************/
 
 header
 {
@@ -39,15 +19,18 @@ header h1
     padding-left: 0.25rem;
 }
 
+/****************/
+/*******NAV******/
+/****************/
 
 nav
 {
     position: fixed;
     background-color: #463b3b;
-    transition: width 300ms ease;
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
 }
-
-
 
 nav ul
 {
@@ -55,6 +38,8 @@ nav ul
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: row;
+    height: 5rem; /* retester */
 }
 
 nav li
@@ -64,120 +49,128 @@ nav li
     justify-content: center;
 }
 
-
-
 nav a
 {
+    /* rendre les blocks plus gros */
     display: flex;
     align-items: center;
-    color: #20C20E;
+    justify-content: center;
+    color: #20c20e;
     text-decoration: none;
     filter: grayscale(50%) opacity(0.7);
-    transition: 500ms;
+    transition: 300ms;
 }
-
 
 nav a:hover
 {
     filter: grayscale(0%) opacity(1);
     background: #535252;
-    color: #20C20E;
+    color: #20c20e;
 }
 
-nav a span 
+nav a span
 {
     display: none;
     margin-left: 1rem;
 }
 
+/****************/
+/******PAGE******/
+/****************/
 
-
-/* Support mobile */
-@media only screen and (max-width: 600px)
+body
 {
-    li:first-of-type
-    {
-        display: none;
-    }
-
-    nav
-    {
-        bottom: 0;
-        width: 100vw;
-        height: 5rem;
-    }
-
-    ul
-    {
-        flex-direction: row;
-        height: 5rem;
-    }
-
-    a
-    {
-        justify-content: center;
-    }
-
-    footer
-    {
-        margin-bottom: 5rem;
-        padding: 0;
-    }
+    margin: 0;
+    padding: 0;
 }
 
-/* Support grands ecrans */
+main{padding: 1rem;}
+
+/****************/
+/*****FOOTER*****/
+/****************/
+
+
+footer
+{
+    margin-bottom: 5rem;
+    padding: 0;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+}
+
+footer ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+footer li{margin: 0.5rem;}
+footer li img
+{
+    width: 2rem;
+    height: 2rem;
+}
+
+nav li:first-of-type{display: none;}
+
+/* Support grand ecran */
 @media only screen and (min-width: 600px)
 {
-    header
-    {
-        margin-left: 5rem;
-    }
+    header{margin-left: 5rem;}
 
     nav
     {
         top: 0;
         width: 5rem;
         height: 100vh;
+        transition: width 300ms ease;
     }
 
-    nav:hover
-    {
-        width: 16rem;
-    }
+    nav:hover{width: 16rem;}
 
-    nav:hover li
+    nav ul
     {
-        display: block;
-    }
-
-    nav:hover a
-    {
-        padding-left: 1rem;
-    }
-
-    nav:hover span
-    {
-        display: inline;
-    }
-
-    ul
-    {
-        height: 100%;
         flex-direction: column;
         align-items: center;
+        height: 100%;
     }
 
-    nav li:first-of-type
-    {
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
-    }
+    nav li:first-of-type{display: flex;}
+
+    nav:hover li{display: block;}
 
     nav a
     {
+        /* justify content ? */
         height: 5rem;
+        transition: 500ms;
+    }
+
+    nav:hover a{padding-left: 1rem;}
+    nav:hover span{display: inline;}
+
+    main
+    {
+        margin-left: 5rem;
+        padding-left: 1rem;
+    }
+
+    footer
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 5rem;
+        margin-bottom: 0;
     }
 }
+
 
 /* -----
 SVG Icons - svgicons.sparkk.fr
@@ -198,39 +191,3 @@ SVG Icons - svgicons.sparkk.fr
     stroke: #20c20e;
     stroke-width: 1;
   }
-
-
-/****************************/
-/********* FOOTER ***********/
-/****************************/
-
-footer
-{
-    background-color: lightgreen;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-left: 5rem;
-}
-
-footer ul
-{
-    height: auto;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-}
-
-footer li
-{
-    margin: 0.5rem;
-}
-
-footer li img
-{
-    width: 2rem;
-    height: 2rem;
-}
