@@ -1,0 +1,30 @@
+
+
+body > section:first-of-type 
+{
+    display: grid;
+    grid-template-columns: 175px 1fr;
+}
+
+section > section
+{
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+}
+
+h2
+{
+    text-align: center;
+}
+
+article
+{
+    padding: 2em;
+}
+
+
+footer
+{
+    background-color: firebrick;
+}
