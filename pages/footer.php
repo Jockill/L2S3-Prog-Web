@@ -1,6 +1,3 @@
-<!-- PENSER A ENLEVER -->
-<link rel="stylesheet" href="../css/master.css">
-
     <footer>
         <div> <!-- Gauche -->
             <form action="">
@@ -51,12 +48,15 @@
         </div>
 
         <div> <!-- Millieu -->
-            <h3>Notre mission</h3>
-            <p>Nous nous battons chaque jour auprès des L33t pour subvenir à leurs besoins sanitaires, n'importe quand, n'importe où.</p>
+            <h3>Notre mission</h3>            
+            <p>
+                Nous nous battons chaque jour auprès des L33t pour subvenir à leurs besoins sanitaires, n'importe quand, n'importe où.
+            </p>
         </div>
 
         <div> <!-- Droite -->
-
+            <h1>SVP FAITES MOI UN DON</h1>
+            <p>💚</p>
         </div>
         <!--
             Copyright
@@ -73,4 +73,5 @@
          -->
 
     </footer>
+</body>
 </html>

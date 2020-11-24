@@ -34,7 +34,8 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+	border-radius: 5px;
 
-    width: 50%;
+    width: 75%;
     height: 5rem;
 }

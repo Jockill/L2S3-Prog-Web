@@ -1,34 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
+<?php include "header.php" ?>
 
-<!-- < ?php include("header.html") ?> -->
-
-<body>
+<link rel="stylesheet" href="../css/style_contact.css">
+<link rel="stylesheet" href="../css/glitch.css">
 
     <main>
-        <form action="" method="post">
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom">
+        <form id="contact" action="presentation.php" method="post">
+            <label for="nom" class="">
+                Nom
+                <br>
+                <input type="text" class="" name="nom" id="nom">
+            </label>
+
+            <label for="prenom">
+                Prenom
+                <br>
+                <input type="text" name="prenom" id="prenom">
+            </label>
             <br>
-            <label for="prenom">Prenom</label>
-            <input type="text" name="prenom" id="prenom">
-            <br> <!--
-            <label for="email">Mail</label>
-            <input type="text" name="email" id="email">
+
+            <label for="mail">
+                Mail
+                <br>
+                <input type="text" name="mail" id="mail">
+            </label>
             <br>
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea> -->
-            <button type="submit">Click</button>
+
+            <label for="message">
+                Message
+                <br>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </label>
+            <!-- radio 1337 ? -->
+            <!-- random phone -->
+            <br>
+            <!-- Courtesy code from csspoint101.com -->
+            <div class="container">
+              <button class="btn-split" type="submit">
+                <div class="name">Envoyer</div>
+                <div class="letters">
+                  <ul class="letters-list">
+                    <li data-letters='["e"]' data-initial="e"></li>
+                    <li data-letters='["e", "n"]' data-initial="n"></li>
+                    <li data-letters='["e", "n", "v"]' data-initial="v"></li>
+                    <li data-letters='["e", "n", "v", "o"]' data-initial="o"></li>
+                    <li data-letters='["e", "n", "v", "o", "y"]' data-initial="y"></li>
+                    <li data-letters='["e", "n", "v", "o", "y", "e"]' data-initial="e"></li>
+                    <li data-letters='["e", "n", "v", "o", "y", "e", "r"]' data-initial="r"></li>
+                  </ul>
+                </div>
+              </button>
+            </div>
+            <!-- My code again -->
         </form>
+
+        <div>.</div>
 
     </main>
 
-<script src="../script/script.js"></script>
+<script src="../script/glitch.js" charset="utf-8"></script>
+<script src="../script/script_contact.js" charset="utf-8"></script>
 
-</body>
-</html>
+<?php include "footer.php" ?>
