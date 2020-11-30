@@ -80,6 +80,7 @@ nav a span
     margin-left: 0;
 }
 
+
 /****************/
 /******PAGE******/
 /****************/
@@ -163,6 +164,17 @@ footer div:nth-of-type(2) h3
     nav:hover
     {
         width: 16rem;
+    }
+
+    nav:hover #aLogo
+    {
+	height: auto;
+    }
+
+    nav:hover img
+    {
+	width: 50%;
+	height: 100%;
     }
 
     nav ul

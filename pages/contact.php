@@ -6,27 +6,27 @@
     <main>
         <form id="contact" action="presentation.php" method="post">
             <label for="nom" class="">
-                Nom
+                <?php echo $nom; ?>
                 <br>
                 <input type="text" class="" name="nom" id="nom">
             </label>
 
             <label for="prenom">
-                Prenom
+                <?php echo $prenom; ?>
                 <br>
                 <input type="text" name="prenom" id="prenom">
             </label>
             <br>
 
             <label for="mail">
-                Mail
+                <?php echo $mail; ?>
                 <br>
                 <input type="text" name="mail" id="mail">
             </label>
             <br>
 
             <label for="message">
-                Message
+                <?php echo $message; ?>
                 <br>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
             </label>

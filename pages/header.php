@@ -15,8 +15,8 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html">
-                    <img src="../ressources/discord-icon.png" alt="logo">
+                <a id="aLogo" href="index.html">
+                    <img src="../ressources/icon.png" alt="logo">
                 </a>
 
             </li>

@@ -5,27 +5,31 @@
 <main>
     <h1>FORUM</h1>
 
-    <article>
-        <div>
-            <img src="../ressources/discord-icon.png" alt="">
-            <h3>User</h3>
-        </div>
-        <span>Mon commentaire incendiaire sur ce forum</span>
-    </article>
-    <article>
-        <div>
-            <img src="../ressources/discord-icon.png" alt="">
-            <h3>User</h3>
-        </div>
-        <span>Mon 2e commentaire incendiaire sur ce forum</span>
-    </article>
-    <article>
-        <div>
-            <img src="../ressources/discord-icon.png" alt="">
-            <h3>User</h3>
-        </div>
-        <span>Mon 3e commentaire incendiaire sur ce forum</span>
-    </article>
+    <div>
+	    <article>
+	        <div>
+	            <img src="../ressources/discord-icon.png" alt="">
+	            <h3>User</h3>
+	        </div>
+	        <span>Mon commentaire incendiaire sur ce forum</span>
+	    </article>
+	    <article>
+	        <div>
+	            <img src="../ressources/discord-icon.png" alt="">
+	            <h3>User</h3>
+	        </div>
+	        <span>Mon 2e commentaire incendiaire sur ce forum</span>
+	    </article>
+	    <article>
+	        <div>
+	            <img src="../ressources/discord-icon.png" alt="">
+	            <h3>User</h3>
+	        </div>
+	        <span>Mon 3e commentaire incendiaire sur ce forum</span>
+	    </article>
+    </div>
+
+	<button id="more">Charger plus de messages</button>
 
     <div>
         <h2>Répondre</h2>
@@ -64,5 +68,6 @@
 </main>
 
 <script src="../script/glitch.js" charset="utf-8"></script>
+<script src="../script/script_forum.js" charset="utf-8"></script>
 
 <?php include "footer.php" ?>
