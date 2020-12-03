@@ -1,71 +1,65 @@
 <?php include_once "./header.php" ?>
+<?php include_once "../trad/trad_presentation.php"; ?>
 <link rel="stylesheet" href="../css/style_presentation.css">
     <main>
-        <h2>Personnages importants</h2>
+	<button type="button" id="tourner">Cliquez ici pour retourner les cartes</button>
+        <h2> <?php echo $important; ?> </h2>
 
-        <div id="cartes">
+
+        <div id="cartes" role="presentation">
             <div class="portrait">
-                <h5>Mr. R0bøt</h5>
-                <div>
+                <h5 aria-describedby="Nom de la personne">Mr. R0bøt</h5>
+                <div aria-describedby="Cout d'invocation de la personne">
                     99
                 </div>
                 <div>
-                    <img src="../ressources/mrrobot.jpg" alt="">
-                    <p>
-                        Il prétend tenir son énergie d'une pomme de terre et qu'il brulera votre maison avec des citrons... <br><br>
-                        Hormis ça, il cuisine très bien les gateaux.
+                    <img aria-describedby="Représentation de la personne" src="../ressources/mrrobot.jpg" alt="">
+                    <p aria-describedby="Présentation de la personne">
+                    	<?php echo $p_robot; ?>
                     </p>
                 </div>
-                <div>
+                <div aria-describedby="Nombre de points de vie de la personne">
                     99
                 </div>
             </div>
 
             <div class="portrait">
-                <h5>Hackerman</h5>
-                <div>
+                <h5 aria-describedby="Nom de la personne">Hackerman</h5>
+                <div aria-describedby="Cout d'invocation de la personne">
                     3.14
                 </div>
                 <div>
-                    <img src="../ressources/hackerman.png">
-                    <p>
-                        <b>"Hackerman, he's the most powerful hacker of all times".</b><br><br>
-                        Vous vous souvenez surement de lui pour avoir hacké le temps dans <i>Kung Fury</i>.<br><br>
-                        Psst... Clique <a href="https://www.youtube.com/watch?v=KEkrWRHCDQU">ici</a> et ça reste entre nous ;)
-                    </p>
+                    <img aria-describedby="Représentation de la personne" src="../ressources/hackerman.png">
+                    <p aria-describedby="Présentation de la personne">
+			<?php echo $p_hackerman; ?>
+		    </p>
                 </div>
-                <div>
+                <div aria-describedby="Nombre de points de vie de la personne">
                     42
                 </div>
             </div>
 
             <div class="portrait">
-                <h5>Zelda</h5>
-                <div>
+                <h5 aria-describedby="Nom de la personne">Zelda</h5>
+                <div aria-describedby="Cout d'invocation de la personne">
                     420
                 </div>
                 <div>
-                    <img src="../ressources/zelda.jpg">
-                    <p>
-                        Il est prêt a parier que tu n'as même pas fait attention au fait que c'est écrit Zelda eu lieu de <em>LINK</em>.
-                        <br><br>
-                        Il a bon dos Zelda...
+                    <img aria-describedby="Représentation de la personne" src="../ressources/zelda.jpg">
+                    <p aria-describedby="Présentation de la personne">
+                    	<?php echo $p_zelda; ?>
                     </p>
                 </div>
-                <div>
+                <div aria-describedby="Nombre de points de vie de la personne">
                     16
                 </div>
             </div>
     </div>
 
-        <h2>Nous retrouver</h2>
+        <h2> <?php echo $retrouver; ?> </h2>
         <div id="map">
             <p>
-                Tu vois le gros rocher ? Bah tu continues tout droit sur 20km. <br>
-                Après ca, tu tournes au 974321e buisson puis tu prends la tangente avec la craquelure dans la chaussée (tu sais celle qui est restée après les travaux, ceux après lesquels mamie se plaint tout le temps ...).
-                Tu la recouvre de poudre d'escampette et puis à la troisième sortie tu y es presque t'en fais pas.
-                Il faut juste faire 3 tours sur toi meme en sensi 12 dans le sens trigo. Et enfin, sans perdre le nord tu touches le mlg noscope 420 blaze it across-the-street et c'est juste après le lampadaire. <br><br>
-                Si tu n'as pas suivi il y a une carte google maps juste à ta droite. :) 
+            	<?php echo $p_retrouver; ?>
             </p>
                 <div>
                     <iframe width="300" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=L33T%20LTD%20manchester&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
@@ -74,4 +68,5 @@
 
     </main>
 
+<script src="../script/script_presentation.js" charset="utf-8"></script>
 <?php include_once "./footer.php" ?>

@@ -2,6 +2,21 @@
 {
     color: #FFFFFF;
 }
+
+#trad
+{
+	max-width: 10%;
+	border: none;
+	padding: 0;
+	background-color: rgba(0,0,0,0);
+}
+#trad:hover{cursor: pointer;}
+#drapeau
+{
+	max-width: 100%;
+}
+
+
 /****************/
 /*****HEADER*****/
 /****************/

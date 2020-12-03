@@ -8,7 +8,8 @@ function checkStr(str)
 
 function checkMail(mail)
 {
-    let reg = new RegExp("^([a-z]{1,}|[a-z]{1,}\.[a-z]{1,})@[a-z]{1,}\.(com|fr|net|org)$");
+    //On n'accepte volontairement pas les autres extensions
+    let reg = new RegExp("^([0-9a-z]{1,}|[0-9a-z]{1,}\.[0-9a-z]{1,})@[0-9a-z]{1,}\.(com|fr|net|org)$");
     return reg.test(mail);
 }
 
@@ -55,6 +56,7 @@ function prepareForm()
     setClass("#prenom", "");
     setClass("#mail", "");
     setClass("#message", "");
+    setClass("#note" , "");
 }
 
 var toast = document.querySelector("main > div");
@@ -76,9 +78,9 @@ document.querySelector("#contact button").addEventListener("click", event => {
 
     if (checks(user) == 1)
     {
-        toast.innerHTML = "Nous gardons votre demande sous la main et vous recontacterons incessament sous peu.";
+        toast.innerHTML = "Nous gardons votre demande sous la main et vous recontacterons incessament sous peu. Merci pour cette incroyable note qui permettra la réussite de mon semestre <3";
         document.querySelector("#contact").reset();
     }
     toast.className = "show";
-    setTimeout(function(){toast.className = toast.className.replace("show", "");}, 3500);
+    setTimeout(function(){toast.className = toast.className.replace("show", "");}, 4000);
 })

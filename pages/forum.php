@@ -1,68 +1,88 @@
-<?php include "header.php" ?>
+<?php include_once "header.php" ?>
+<?php include_once '../trad/trad_forum.php' ?>
 <link rel="stylesheet" href="../css/glitch.css">
 <link rel="stylesheet" href="../css/style_forum.css">
 
 <main>
     <h1>FORUM</h1>
 
+	<p>
+		<?php
+			if (isset($_GET["mod"]))
+			{
+				if ($_GET["mod"] == "created")
+					echo $created;
+				else if ($_GET["mod"] == "badData")
+					echo $badData;
+				else if ($_GET["mod"] == "error")
+					echo $error;
+			}
+		?>
+	</p>
+
     <div>
 	    <article>
 	        <div>
-	            <img src="../ressources/discord-icon.png" alt="">
-	            <h3>User</h3>
+	            <img src="../ressources/faker.png" alt="Image de profil de faker">
+	            <h3>Faker</h3>
 	        </div>
-	        <span>Mon commentaire incendiaire sur ce forum</span>
+	        <span>L33t.C4r3 always goes for the huge play the QSS.</span>
 	    </article>
 	    <article>
 	        <div>
-	            <img src="../ressources/discord-icon.png" alt="">
-	            <h3>User</h3>
+	            <img src="../ressources/del.jpg" alt=<?php echo $delUsr; ?>>
+	            <h3> <?php echo $delUsr; ?></h3>
 	        </div>
-	        <span>Mon 2e commentaire incendiaire sur ce forum</span>
+	        <span> <?php echo $delCom; ?> </span>
 	    </article>
 	    <article>
 	        <div>
-	            <img src="../ressources/discord-icon.png" alt="">
-	            <h3>User</h3>
+	            <img src="../ressources/kqly.png" alt="">
+	            <h3>KQLY</h3>
 	        </div>
-	        <span>Mon 3e commentaire incendiaire sur ce forum</span>
+	        <span>Merci pour le aim bot !</span>
 	    </article>
     </div>
 
-	<button id="more">Charger plus de messages</button>
+	<div id='ajaxxe'></div>
+	<button id="more"> <?php echo $plus; ?> </button>
 
     <div>
-        <h2>Répondre</h2>
-        <form action="">
-          <!-- On suppose que l'user est connecté, on récupère son cookie de session pour le nom et l'image. -->
-            <label for="titre">Titre</label>
-	    <br>
-            <input type="text" id="titre">
-            <br>
-            <label for="message">Message</label>
-            <br>
-            <textarea name="message" id="message"></textarea>
+        <h2> <?php echo $rep; ?> </h2>
+	<img src="<?php echo $_COOKIE["ppurl"]; ?>" alt="<?php echo $altPP; ?>">
 
-            <!-- Courtesy code from csspoint101.com -->
-            <div class="container">
-              <button class="btn-split" type="submit">
-                <div class="name">Envoyer</div>
-                <div class="letters">
-                  <ul class="letters-list">
-                    <li data-letters='["e"]' data-initial="e"></li>
-                    <li data-letters='["e", "n"]' data-initial="n"></li>
-                    <li data-letters='["e", "n", "v"]' data-initial="v"></li>
-                    <li data-letters='["e", "n", "v", "o"]' data-initial="o"></li>
-                    <li data-letters='["e", "n", "v", "o", "y"]' data-initial="y"></li>
-                    <li data-letters='["e", "n", "v", "o", "y", "e"]' data-initial="e"></li>
-                    <li data-letters='["e", "n", "v", "o", "y", "e", "r"]' data-initial="r"></li>
-                  </ul>
-                </div>
-              </button>
-            </div>
-            <!-- My code again -->
+	<?php
+		if (isset($_COOKIE["username"]))
+		{
+	?>
+			<form action="http://localhost:8080/pages/new_message.php" method="post">
+			<!-- On suppose que l'user est connecté, on récupère son cookie de session pour le nom et l'image. -->
+			<!-- <label for="titre"> < ?php echo $forum_titre; ?> </label> -->
+			<!-- <br> -->
+			<!-- <input type="text" name ="titre" id="titre"> -->
+			<!-- <br> -->
 
-        </form>
+				<label for="message">Message</label>
+				<br>
+				<textarea name="message" id="message"></textarea>
+
+				<!-- Courtesy code from csspoint101.com -->
+				<div class="container">
+					<button class="btn-split" type="submit">
+						<div class="name"> <?php echo $envoyer; ?> </div>
+							<div class="letters">
+								<ul class="letters-list">
+									<?php echo $button; ?>
+								</ul>
+							</div>
+					</button>
+				</div>
+			<!-- My code again -->
+		        </form>
+	<?php
+		}
+	?>
+
     </div>
 
 </main>

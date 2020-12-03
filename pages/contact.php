@@ -1,11 +1,12 @@
-<?php include "header.php" ?>
+<?php include_once "header.php" ?>
+<?php include_once '../trad/trad_contact.php'; ?>
 
 <link rel="stylesheet" href="../css/style_contact.css">
 <link rel="stylesheet" href="../css/glitch.css">
 
     <main>
-        <form id="contact" action="presentation.php" method="post">
-            <label for="nom" class="">
+        <form id="contact" action="" method="post">
+            <label for="nom">
                 <?php echo $nom; ?>
                 <br>
                 <input type="text" class="" name="nom" id="nom">
@@ -30,22 +31,30 @@
                 <br>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
             </label>
+
+	    <label for="note">
+                <?php echo $note; ?>
+                <br>
+		<select name="note" id="note">
+			<option value="20">20</option>
+			<option value="20"><?php echo $probablement;?> 20</option>
+			<option value="20"><?php echo $certainement;?> 20</option>
+			<option value="20"><?php echo $absoulement;?> 20</option>
+		</select>
+            </label>
+            <br>
+
+
             <!-- radio 1337 ? -->
             <!-- random phone -->
             <br>
             <!-- Courtesy code from csspoint101.com -->
             <div class="container">
               <button class="btn-split" type="submit">
-                <div class="name">Envoyer</div>
+                <div class="name"><?php echo $envoyer ?></div>
                 <div class="letters">
                   <ul class="letters-list">
-                    <li data-letters='["e"]' data-initial="e"></li>
-                    <li data-letters='["e", "n"]' data-initial="n"></li>
-                    <li data-letters='["e", "n", "v"]' data-initial="v"></li>
-                    <li data-letters='["e", "n", "v", "o"]' data-initial="o"></li>
-                    <li data-letters='["e", "n", "v", "o", "y"]' data-initial="y"></li>
-                    <li data-letters='["e", "n", "v", "o", "y", "e"]' data-initial="e"></li>
-                    <li data-letters='["e", "n", "v", "o", "y", "e", "r"]' data-initial="r"></li>
+                    <?php echo $button; ?>
                   </ul>
                 </div>
               </button>
@@ -53,7 +62,7 @@
             <!-- My code again -->
         </form>
 
-        <div>.</div>
+        <div role="log" aria-live="polite">.</div>
 
     </main>
 

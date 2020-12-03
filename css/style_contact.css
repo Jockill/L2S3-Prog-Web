@@ -41,7 +41,7 @@ main > div
 {
     visibility: hidden;
     width: 45vw;
-    background-color: #2c2c2c;
+    background-color: #3c3c3c;
     text-align: center;
     border-radius: 4px;
     position: fixed;
@@ -55,8 +55,8 @@ main > div.show
     padding: 0.5rem;
 
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 3s;
-    animation: fadein 0.5s, fadeout 0.5s 3s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4s;
+    animation: fadein 0.5s, fadeout 0.5s 4s;
 }
 
 @-webkit-keyframes fadein {

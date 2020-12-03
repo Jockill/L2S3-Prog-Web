@@ -1,9 +1,12 @@
     <footer>
+
+	<?php include_once "../trad/trad_footer.php"; ?>
+
         <div> <!-- Gauche -->
             <form action="">
                 <label for="signup">Newsletter</label><br>
                 <input type="text" name="mail" id="mail">
-                <button type="submit">S'abonner</button>
+                <button type="submit"> <?php echo $abonement; ?> </button>
             </form>
 
             <div> <!-- Reseaux -->
@@ -48,29 +51,22 @@
         </div>
 
         <div> <!-- Millieu -->
-            <h3>Notre mission</h3>            
+            <h3> <?php echo $mission; ?> </h3>
             <p>
-                Nous nous battons chaque jour auprès des L33t pour subvenir à leurs besoins sanitaires, n'importe quand, n'importe où.
+		<?php echo $mission2; ?>
             </p>
         </div>
 
         <div> <!-- Droite -->
-            <h1>SVP FAITES MOI UN DON</h1>
-            <p>💚</p>
+	    <p>
+		<?php echo $cookie; ?>
+	    </p>
+	    <br>
+	    <p>
+		<?php echo $lang; ?>
+            	<?php include "trad_button.php" ?>
+	    </p>
         </div>
-        <!--
-            Copyright
-            Logo
-            Réseaux
-            Téléphone
-            Powered by
-               Subscribe
-                Press
-                Our mission
-            Awards and certifications
-            Témoignage
-            Don
-         -->
 
     </footer>
 </body>

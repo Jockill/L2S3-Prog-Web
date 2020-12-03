@@ -1,21 +1,36 @@
 const portraits = document.querySelectorAll(".portrait");
 
+function back(portrait)
+{
+	portrait.style.transform = "rotateY(180deg)";
+	portrait.querySelector("h5").style.transform = "rotateY(180deg)";
+	let bulles = portrait.querySelectorAll("div:nth-of-type(odd)");
+	bulles[0].style.display = "none";
+	bulles[1].style.display = "none";
+	portrait.querySelector("img").style.display = "none";
+	portrait.querySelector("p").style.display = "block";
+	portrait.querySelector("p").style.transform= "rotateY(180deg)";
+}
 
-for (var i=0; i<portraits.length; i++)
-    portraits[i].addEventListener("click", function()
-    {
-        let text = this.getElementsByTagName('p')[0];
-        let image = this.getElementsByTagName('img')[0];
+function front(portrait)
+{
+	portrait.style.transform = "rotateY(0)";
+	portrait.querySelector("h5").style.transform = "rotateY(0)";
+	let bulles = portrait.querySelectorAll("div:nth-of-type(odd)");
+	bulles[0].style.display = "flex";
+	bulles[1].style.display = "flex";
+	portrait.querySelector("img").style.display = "block";
+	portrait.querySelector("p").style.display = "none";
+	portrait.querySelector("p").style.transform= "rotateY(0)";
+}
 
-        console.log(text, image);
-
-        if (text.style.display === "" || text.style.display === "none") text.style.display = "block";
-        else text.style.display = "none";
-
-        if (image.style.display === "" || image.style.display === "block")
-            image.style.display = "none";
-        else
-            image.style.display = "block";
-
-    }
-)
+document.querySelector("#tourner").addEventListener("click", () =>
+{
+	for (var i=0; i<portraits.length; i++)
+	{
+		if (portraits[i].style.transform == "rotateY(180deg)")
+			front(portraits[i]);
+		else
+			back(portraits[i]);
+	}
+});
