@@ -7,7 +7,7 @@ Backend repo du projet de prog. web de Math-info L2.
 ## PDO
 
 Vous avez à votre disposition deux manières d'utiliser le _PDO_.
- 1. Intégrer la base de donnée jointe avec le nom `progweb`, sur un compte `localhost@cours` avec comme mot de passe `1810`
+ 1. Intégrer la base de donnée jointe avec le nom `progweb`, sur un compte `cours@localhost` avec comme mot de passe `1810`
  2. Utiliser vos propres variables d'environement :
   * _BDDNAME_ pour le nom de la base,
   * _USERNAME_ pour le nom d'utilisateur,
