@@ -10,11 +10,11 @@ Vous avez à votre disposition deux manières d'utiliser le _PDO_.
   * _BDDNAME_ pour le nom de la base,
   * _USERNAME_ pour le nom d'utilisateur,
   * _PASS_ pour son mot de passe.
-  Il vous faudra cependant modifier les premières lignes du `try` des fichier :
-  * forum.php
-  * login.php
-  * new_message.php
-  * new_player.php
+ Il vous faudra cependant modifier les premières lignes du `try` des fichier :
+ * forum.php
+ * login.php
+ * new_message.php
+ * new_player.php
 
 
 La base de données se compose de deux tables créées avec _mysql_:
