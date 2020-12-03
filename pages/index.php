@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../css/style_index.css">
 
 <main>
-	<p>
+	<p role="log" aria-live="polite">
 		<?php
 			if (isset($_GET["mod"]))
 			{
