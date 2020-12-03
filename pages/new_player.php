@@ -3,14 +3,19 @@
 	//Securisation
 	$username = htmlentities($_POST["username"]);
 	$pass = htmlentities($_POST["pass"]);
+	$ppurl = htmlentities($_POST["ppurl"]);
 
 
-	if ($username != "" && $pass != "")
+	if ($username != "" && $pass != "" && $_POST["pass"] == $_POST["pass2"])
 	{
 		try
 		{
-			$pdo = new PDO('mysql:host=localhost;port=3306;dbname=progweb', "cours", "1810");
-			// Je sais absolument ce que font ces deux lignes, pas besoin de poser de question dessus
+			//Methode 1 : Utilisez vos propres variables d'environement
+				// $pdoSource = 'mysql:host=localhost;port=3306;dbname=' . getenv('BDDNAME');
+				// echo $pdoSource;
+				// $pdo = new PDO($pdoSource, getenv("USERNAME"), getenv("PASS"));
+			//Methode 2 : Configurez la base de donnée pour matcher ces identifiants
+				$pdo = new PDO("mysql:host=localhost;port=3306;dbname=progweb", "cours", "1810");
 			$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,35 +32,35 @@
 				if ($username === $users[$i]["username"])
 				{
 					//Renvoyer à la page, l'user existe déja.
-					header("Location: http://localhost:8000/index.php&MOD=alreadyExists");
+					header("Location: http://localhost:8000/pages/index.php?mod=alreadyExists");
 					$exist = true;
-					break;
+					exit;
 				}
 			}
 
-			if ($exist != true)
-			{
-				//On l'insere
-				$statement = $pdo->prepare('INSERT INTO user_data (username, pass) VALUES (:username, :pass)');
-				$statement->bindValue('username', $username);
-				$statement->bindValue('pass', $pass);
-				$statement->execute();
+			//On l'insere
+			$statement = $pdo->prepare('INSERT INTO user_data (username, pass, ppurl) VALUES (:username, :pass, :ppurl)');
+			$statement->bindValue('username', $username);
+			$statement->bindValue('pass', $pass);
+			$statement->bindValue('ppurl', $ppurl);
+			$statement->execute();
 
-				//Redirige
-				header("Location: http://localhost:8000/index.php&MOD=created");
-			}
+			//Redirige
+			header("Location: http://localhost:8000/pages/index.php?mod=created");
+			exit;
 
 		}
 		catch (Exception $e)
 		{
-			//Je sais pas encore faire ca
-			echo ":@";
+			header("Location: http://localhost:8000/pages/index.php?mod=error");
+			exit;
 		}
 
 	}
 	else
 	{
-		header("Location: http://localhost:8000/index.php&MOD=falseData");
+		header("Location: http://localhost:8000/pages/index.php?mod=badData");
+		exit;
 	}
 
 

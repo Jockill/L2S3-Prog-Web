@@ -5,11 +5,11 @@ class Comment
     /**
      * @var string
      */
-    private $text;
+    public $text;
     /**
      * @var User
      */
-    private $author;
+    public $author;
 
     /**
      * Comment constructor.

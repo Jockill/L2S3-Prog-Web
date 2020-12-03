@@ -7,12 +7,14 @@
 
 	try
 	{
-		$pdo = new PDO('mysql:host=localhost;port=3306;dbname=progweb', "cours", "1810");
-		// Je sais absolument ce que font ces deux lignes, pas besoin de poser de question dessus
+		//Methode 1 : Utilisez vos propres variables d'environement
+			// $pdoSource = 'mysql:host=localhost;port=3306;dbname=' . getenv('BDDNAME');
+			// echo $pdoSource;
+			// $pdo = new PDO($pdoSource, getenv("USERNAME"), getenv("PASS"));
+		//Methode 2 : Configurez la base de donnée pour matcher ces identifiants
+			$pdo = new PDO("mysql:host=localhost;port=3306;dbname=progweb", "cours", "1810");
 		$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 	        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		// TODO: S'assurer que les tables existent.
 
 		$users = $pdo->query('SELECT * FROM user_data')->fetchAll();
 		$usersObj = [];
@@ -28,7 +30,6 @@
 			}
 		}
 
-
 		$comments = $pdo->query('SELECT * FROM comment')->fetchAll();
 
 	        $commentsObj = [];
@@ -37,52 +38,27 @@
 			$userSelected = null;
 
             		foreach ($usersObj as $user)
-	                	if ($user->getId() == $comment['author'])
-	                    		$userSelected = $user;
+			{
+				if ($user->getId() == $comment['author'])
+				{
+					$userSelected = $user;
+				}
+			}
 
 			$commentsObj[] = new Comment(
-				$comment['text'],
-				$userSelected
-			);
+					$comment['text'],
+					$userSelected);
 	        }
 
-		$json = json_encode($commentsObj, JSON_PARTIAL_OUTPUT_ON_ERROR);
-		echo $json;
+		// var_dump($commentsObj);
+		$json = json_encode($commentsObj);
+		// echo '<body>' . $json . '</body>';
+		echo($json);
+		// echo '{ "data": [{"text":"First!","author":{"id":"1","username":"lpb","ppurl":"rien"}}] }';
+
 	}
 	catch (Exception $e)
 	{
 		echo "Une erreur est survenue.";
 	}
 ?>
-
-
-
-<!-- Partie HTML pour rendre les commentaires. -->
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Titer</title>
-	</head>
-	<body>
-
-		<h1>Titre</h1>
-
-		<form action="new_message.php" method="post">
-
-		</form>
-
-		<main>
-			< ?php foreach ($commentsObj as $comment) : ?>
-				<article>
-					<div>
-						<img src="< ?= $comment->getAuthor()->getPpurl(); ?>" alt="image de profil d'un utilisateur">
-						<h3> < ?= $comment->getAuthor()->getUsername(); ?> </h3>
-					</div>
-					<span> < ?= $comment->getText(); ?> </span>
-				</article>
-			< ?php endforeach; ?>
-		</main>
-
-	</body>
-</html> -->

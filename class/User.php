@@ -5,15 +5,15 @@ class User
     /**
      * @var string
      */
-    private $id;
+    public $id;
     /**
      * @var string
      */
-    private $username;
+    public $username;
     /**
      * @var string
      */
-    private $ppurl;
+    public $ppurl;
 
     /**
      * User constructor.
