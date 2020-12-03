@@ -2,10 +2,10 @@
 
 Backend repo du projet de prog. web de Math-info L2.
 
-#Utilisation de la BDD
+# Utilisation de la BDD
 ---
-##PDO
----
+## PDO
+
 Vous avez à votre disposition deux manières d'utiliser le _PDO_.
  1. Intégrer la base de donnée jointe avec le nom `progweb`, sur un compte `localhost@cours` avec comme mot de passe `1810`
  2. Utiliser vos propres variables d'environement :
@@ -19,14 +19,14 @@ Vous avez à votre disposition deux manières d'utiliser le _PDO_.
  * new_message.php
  * new_player.php
 
-
-##SQL
+---
+## MySQL
 
 La base de données se compose de deux tables créées avec _mysql_:
  * comment
  * user_data
-
-##Comment
+---
+## Comment
 Cette table stocke tous les commentaires postés sur le forum du site. Elle se compose de 3 champs, dans l'ordre:
  * id
  * text
@@ -40,8 +40,8 @@ _text_ n'a pas le nom le plus intelligent possible mais est de type __text__. Il
 
 _author_ est un __int__ liant la table _'comment'_ à la table _'user_data'_. Il correspond à l'_id_ de l'utilisateur ayant posté le commentaire.
 
-
-##User_data
+---
+## User_data
 Cette table stocke tous les utilisateurs créés sur le site. Elle se compose de 4 champs, dans l'ordre:
  * id
  * username
